@@ -1,14 +1,31 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen';
 import MovieScreen from '../screens/MovieScreen';
+import CameraScreen from '../screens/CameraScreen';
+
 
 const AppNav = () => {
-    const HomeStack = createStackNavigator()
+    const Stack = createStackNavigator()
     return (
-        <HomeStack.Navigator initialRouteName='Movie'>
-            <HomeStack.Screen name='Home' component={HomeScreen}></HomeStack.Screen>
-            <HomeStack.Screen name='Movie' component={MovieScreen}></HomeStack.Screen>
-        </HomeStack.Navigator>
+        <Stack.Navigator initialRouteName='Camera'>
+            <Stack.Screen 
+                name='Home' 
+                component={HomeScreen}
+                options={{title: 'Home'}}
+            />
+            <Stack.Screen 
+                name='Movie' 
+                component={MovieScreen}
+                options={{title: 'Movie'}}
+                style={{backgroundColor: '#080808'}} 
+
+            />
+            <Stack.Screen 
+                name="Camera"
+                component={CameraScreen}
+                options={{title: 'Camera'}}
+            />
+        </Stack.Navigator>
     )
 }
 

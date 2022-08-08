@@ -1,6 +1,9 @@
 import { StyleSheet, Text, View, FlatList, SafeAreaView, Button,  } from 'react-native'
 import React, { useState } from 'react'
-import MovieScreen from './MovieScreen';
+import SearchBar from '../components/SearchBar';
+
+
+
 
 
 export default function HomeScreen() {
@@ -52,10 +55,14 @@ export default function HomeScreen() {
                 renderItem={renderItem}
                 keyExtractor={item => item.id}
             />
+        <SearchBar />
         </SafeAreaView>
+        
     </View>
   )
 }
+
+
 
 const styles = StyleSheet.create({
     container: {
@@ -63,6 +70,7 @@ const styles = StyleSheet.create({
     },
     textColor: {
         color: 'red',
+        alignItems: 'center'
     },
     item: {
         justifyContent: 'center',
